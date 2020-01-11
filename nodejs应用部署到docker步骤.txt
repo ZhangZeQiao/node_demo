@@ -40,3 +40,5 @@ docker run --name node_demo-test -p 8888:8888 -d node_demo
 docker rm ID
 # 暂停容器
 docker stop ID
+
+3、Nodejs Docker 镜像体积优化实践 https://github.com/lvwxx/blog/issues/6
