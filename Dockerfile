@@ -22,6 +22,11 @@ EXPOSE 8888
 # 在容器启动时，执行的命令，可被docker run提供的参数覆盖
 # CMD ["start"]
 # ENTRYPOINT ["npm", "start"]
-# CMD ["npm", "start"]
-# TODO: 实践出来，上面的都没用，起不来，下面直接运行就可以了（这里只是demo，实际应用到时再看）
-CMD ["node", "index.js"]
+# TODO: 实践出来，下面CMD ["node", "index.js"]直接运行是可以的，但这只是运行单个文件，
+# CMD ["node", "index.js"]
+# 只要package.json如下面这样配置了启动页，然后CMD ["npm", "start"]，作为一个项目运行起来才是正确的打开方式
+# "scripts": {
+#     "start": "node index.js",
+#     ... ...
+# }
+CMD ["npm", "start"]

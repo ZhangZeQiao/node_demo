@@ -4,10 +4,10 @@
   "description": "node.js demo",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "//": "解决运行docker build -tnode_demo node_demo时的错误npm WARN package@1.0.0 No repository field.",
-  "//": "但只作为测试项目或者练习用：https://blog.csdn.net/u012971339/article/details/55260720",
+  "//": "解决运行docker build -tnode_demo node_demo时的错误npm WARN package@1.0.0 No repository field；但只作为测试项目或者练习用：https://blog.csdn.net/u012971339/article/details/55260720",
   "private": true,
   "author": "zzq",
   "license": "ISC",
