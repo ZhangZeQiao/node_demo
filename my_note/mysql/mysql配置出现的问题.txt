@@ -1,0 +1,9 @@
+1、navicat连接docker的mysql容器如果报错，要对mysql容器做如下操作：
+(1) 进入docker的mysql容器
+  $ docker-compose exec mysql bash
+(2) 然后以root身份登录mysql (账户和密码在laradock/.env文件中查看)
+  $ mysql -uroot -proot
+(3) 运行下列命令,navicat就可以通过root用户连接mysql了
+  // ALTER USER 'username' IDENTIFIED WITH mysql_native_password BY 'password';
+  mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
+  

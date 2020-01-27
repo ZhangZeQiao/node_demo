@@ -1,0 +1,12 @@
+一、Docker 安装 Nginx：
+1、拉取官方的最新版本的镜像：$ docker pull nginx:latest
+2、使用以下命令来查看是否已安装了 nginx：$ docker images
+3、安装完成后，使用以下命令来运行 nginx 容器：$ docker run --name nginx-test -p 8080:80 -d nginx
+    参数说明：
+            --name nginx-test：容器名称。
+            -p 8080:80： 端口进行映射，将本地 8080 端口映射到容器内部的 80 端口。
+            -d nginx： 设置容器在在后台一直运行。
+
+二、进入及退出容器
+1、进入已运行的nginx容器：docker exec -it 容器ID bash
+2、退出容器：exit

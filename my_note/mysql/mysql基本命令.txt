@@ -1,0 +1,32 @@
+1、进入数据库：mysql -h localhost -u root -p
+
+2、数据库操作：
+    ① 查看数据库命令：show databases;
+    ② 创建数据库，数据库名为dbname：create database dbname;
+    ③ 删除数据库：drop database dbname;
+    ④ 修改数据库字符集：alter database character set utf8;
+    ⑤ 选择数据库：use dbname;
+    ⑥ 查看当前选择（use）的数据库：status;
+    ⑦ 显示当前mysql版本和当前日期：select version(),current_date;
+    ⑧ 退出数据库：exit 
+
+3、数据库表操作：
+    ① 显示所有表：show tables;
+    ② 表结构详细描述：describe tablename;/desc tablename;
+    ③ 复制表结构：create table newtable like oldtable;
+    ④ 复制表数据：insert into newtable select * from oldtable;
+    ⑤ 重命名表，同时命名多个表用逗号“,”分割：rename table tablelname to new_tablelname
+    ⑥ 删除表：drop table tablename;
+
+4、创建数据表：
+格式：create table <表名> (<字段名1> <类型1> [,..<字段名n> <类型n>]);
+数据的类型之后还可以包含：数据宽度 + 是否为空 + 是否主键 + 自动增加 + 默认值，它们书写时不限顺序。
+但是字段名和字段类型必须是第一和第二位。
+例如，建立一个名为user的表：
+mysql> create table user(
+    -> id int(4) not null primary key auto_increment,
+    -> name char(20) not null,
+    -> sex int(4) not null default '0',
+    -> degree double(16,2) # 总共占16位数字，小数点后占两位(若没有，系统会自动补上.00)，小数点前占14位。
+    -> );
+

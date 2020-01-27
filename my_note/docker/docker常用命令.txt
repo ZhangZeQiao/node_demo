@@ -1,0 +1,19 @@
+1、停止当前运行中的命令：ctrl+c
+
+2、布到docker
+# 查看已有镜像
+docker images
+# cd到项目所在目录，将项目构建到docker，-t后面为镜像名称
+docker build -tnode_demo node_demo
+# 删除镜像，删除前要先删除该镜像的容器
+docker rmi node_demo
+# 查看已有容器
+docker ps -a
+# 创建指定镜像的容器，映射端口号
+docker run --name node_demo-test -p 8888:8888 -d node_demo
+# 删除容器，删除前要暂停该容器docker stop ID
+docker rm ID
+# 暂停容器
+docker stop ID
+# 重启容器
+docker restart ID
