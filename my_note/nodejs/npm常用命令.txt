@@ -1,0 +1,7 @@
+1、查看要安装的插件版本号：
+所有的版本：npm view xxxname versions
+最新版本：npm view xxxname version
+
+2、install：
+本地安装：npm install xxxname@version
+全局安装：npm install xxxname@version -g
