@@ -1,0 +1,25 @@
+Sequelize：
+基于Promise的ORM
+用于操作MySQL,Postgres,SQLite,sqlserver等关系型数据库
+所有的结果集都是Promsie对象，不能直接读取结果
+连接数据库初始化时，会创建连接池，该池会创建和管理一个连接和缓冲技术
+
+选择Node的ORM框架Sequelize来操作数据库。这样，我们读写的都是JavaScript对象，Sequelize帮我们把对象变成数据库中的行。
+
+因为Sequelize返回的对象是Promise，所以我们可以用then()和catch()分别异步响应成功和失败。
+但是用then()和catch()仍然比较麻烦。有没有更简单的方法呢？
+可以用ES7的await来调用任何一个Promise对象，这样我们写出来的代码就变成了：
+var pets = await Pet.findAll();
+真的就是这么简单！
+await只有一个限制，就是必须在async函数中调用。上面的代码直接运行还差一点，我们可以改成：
+(async () => {
+    var pets = await Pet.findAll();
+})();
+考虑到koa的处理函数都是async函数，所以我们实际上将来在koa的async函数中直接写await访问数据库就可以了！
+这也是为什么我们选择Sequelize的原因：只要API返回Promise，就可以用await调用，写代码就非常简单！
+
+《建立Model》
+https://www.liaoxuefeng.com/wiki/1022910821149312/1102265871746784
+一个大型Web App通常都有几十个映射表，一个映射表就是一个Model。
+如果按照各自喜好，那业务代码就不好写。Model不统一，很多代码也无法复用。
+所以我们需要一个统一的模型，强迫所有Model都遵守同一个规范，这样不但实现简单，而且容易统一风格。

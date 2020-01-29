@@ -1,0 +1,6 @@
+1、Error: Please install mysql2 package manually
+sequelize需要依赖mysql2
+
+2、写代码没有提示：
+这样引用，写代码没有提示：const Sequelize = require('sequelize');
+正确得引用方式：const Sequelize = require('sequelize/index');
