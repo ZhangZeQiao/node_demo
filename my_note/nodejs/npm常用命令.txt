@@ -5,3 +5,8 @@
 2、install：
 本地安装：npm install xxxname@version
 全局安装：npm install xxxname@version -g
+
+3、统一安装项目依赖模块：npm install
+
+4、启动服务：npm start
+
